@@ -1,0 +1,107 @@
+# generic
+*~
+*#
+*._*
+*.log
+*.log.*
+*.pid
+
+# apple
+.DS_Store
+*~.nib
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Development
+.*.sw[po]
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.ropeproject
+*.sass-cache
+.aws.env
+.codeintel
+.coverage
+.noseids
+.semantic.cache
+.settings
+.idea
+.realsync
+*.tm_build_errors
+tmtags
+
+# iresign version
+isign/version.json
+
+# iresign temp files
+Entitlements.plist
+stage
+out.app
+out.ipa
+
+# all credentials
+*.pem
+*.p12
+*.mobileprovision
+# except these
+!apple_credentials/applecerts.pem
+!tests/credentials/test.key.pem
+!tests/credentials/test.cert.pem
+!tests/credentials/test.mobileprovision
+!tests/credentials_std_names/certificate.pem
+!tests/credentials_std_names/isign.mobileprovision
+!tests/credentials_std_names_2/key.pem
+!tests/credentials_std_names_2/certificate.pem
+!tests/credentials_std_names_2/isign.mobileprovision
