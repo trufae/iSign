@@ -14,19 +14,27 @@ function start_install() {
     apt-get -qq --assume-yes install python-setuptools
     apt-get -qq --assume-yes install zip
     apt-get -qq --assume-yes install curl
-    echo -e "${WHITE}Installing iSign"
-    easy_install -q isign
+    apt-get -qq --assume-yes install git
+    easy_install pip
     echo -e "${WHITE}Fix OpenSSH bug"
     sudo rm -rf /usr/local/lib/python2.7/dist-packages/OpenSSL/
-    sudo apt -qq --assume-yes install --reinstall python-openssl 
+    apt-get -qq --assume-yes install --reinstall python-openssl
+    echo -e "${WHITE}Installing iSign"
+    #git clone https://github.com/involvestecnologia/iSign.git
+    cd ../isign/
+    chmod +x INSTALL.sh
+    ./INSTALL.sh 
 }
 
 # Remove setuptools, zip, curl and openSSL
 function start_uninstall() {
     pip uninstall isign
+    pip uninstall pip
     apt-get -qq --assume-yes remove python-setuptools
     apt-get -qq --assume-yes remove zip
     apt-get -qq --assume-yes remove curl
+    apt-get -qq --assume-yes remove git
+    apt-get -qq --assume-yes remove python-openssl
     sudo rm -rf /usr/local/lib/python2.7/dist-packages/OpenSSL/
 }
 
@@ -53,7 +61,7 @@ fi
 APT_GET_CMD=$(which apt-get)
 if [[ ! -z $APT_GET_CMD ]]; then
     if [ "$1" == "install" ]; then
-	    start_install
+    start_install
         certificates
     elif [ "$1" == "uninstall" ]; then
         start_uninstall
@@ -66,4 +74,3 @@ else
     echo -e "${RED}/!\ ${NC}This script require a distro Debian based.${NC}"
     exit 1
 fi
-
