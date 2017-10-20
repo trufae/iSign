@@ -21,6 +21,7 @@ function start_install() {
     apt-get -qq --assume-yes install --reinstall python-openssl
     echo -e "${WHITE}Installing iSign"
     #git clone https://github.com/involvestecnologia/iSign.git
+    chmod -R 755 ../isign
     cd ../isign/
     chmod +x INSTALL.sh
     ./INSTALL.sh 
