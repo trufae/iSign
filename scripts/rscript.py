@@ -57,7 +57,6 @@ def getRepositories():
 	print('Load repositories')
 	g = GitHub(token=IOS_GITHUB_TOKEN)
 	repos = g.repos['involvestecnologia']['agilepromoter-ios'].releases.get()
-	#print(len(repos[1]))
 	for r in repos[1]:
 		tag = r['tag_name']
 		if tag == VERSION:
@@ -143,7 +142,7 @@ def generateMetadata():
 
 # Upload IPA to Amazon S3
 def vaiFilhao():
-	print('Upload to amazon')#requirements.txt
+	print('Upload to amazon')
 	path = os.path.join(os.getcwd()+'/'+FILE_NAME)
 	index = os.path.join(os.getcwd()+'/'+'index.html')
 	manifest = os.path.join(os.getcwd()+'/'+'manifest.plist')
@@ -176,14 +175,14 @@ def main(argv):
 		quit()
 	if IOS_GITHUB_TOKEN != None:
 		getRepositories()
-	# 	modifyIPA()
-	# 	generateMetadata()
-	# if SHEET != None:
-	# 	sheetsHappen()
-	# if MAESTRO != None:
-	# 	updateMaestro()
-	# if S3 != None:
-	# 	vaiFilhao()
+		modifyIPA()
+		generateMetadata()
+	if SHEET != None:
+		sheetsHappen()
+	if MAESTRO != None:
+		updateMaestro()
+	if S3 != None:
+		vaiFilhao()
 
 if __name__ == "__main__":
    parser = argparse.ArgumentParser()
