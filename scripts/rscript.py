@@ -157,7 +157,7 @@ def vaiFilhao():
 # Update Maestro
 def updateMaestro():
 	print('Update Maestro')
-	url = 'https://staging-maestro.agilepromoter.com/client/'+CLIENT+'?iosVersion='+VERSION
+	url = 'https://maestro.agilepromoter.com/client/'+CLIENT+'?iosVersion='+VERSION
 	maestro = requests.post(url, auth=('user', MAESTRO))
 	print(maestro.status_code)
 
