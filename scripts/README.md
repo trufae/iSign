@@ -23,7 +23,7 @@ $ ./rscript -a <APP IDENTIFIER> -c <CLIENT ID>  -v <VERSION> ...
 
 By default S3 Region/endpoint value is s3-website-us-east-1.amazonaws.com
 A endpoint list is available in [AWS Docs](http://docs.aws.amazon.com/pt_br/general/latest/gr/rande.html)
-99627-6680
+
 
 ## Dependencies
 requests, zipfile, plistlib, boto3, gspread and isign
