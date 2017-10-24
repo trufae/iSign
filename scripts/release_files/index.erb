@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Agile Promoter iOS</title>
+    <style type="text/css">
+    body {
+    background: #EAEAE9;
+    font-family: Helvetica-Neue, Helvetica, arial, sans-serif;
+    font-weight: lighter;
+    }
+    .congrats {
+    font-size: 16pt;
+    padding: 6px;
+    text-align: center;
+    }
+    .step {
+    background: white;
+    border: 1px #ccc solid;
+    border-radius: 14px;
+    padding: 4px 10px;
+    margin: 10px 0;
+    }
+    .instructions {
+    font-size: 10pt;
+    }
+    .arrow {
+    font-size: 15pt;
+    }
+    table {
+    width: 100%;
+    }
+    a {
+    text-decoration: none;
+    color: #0C0C0C;
+    }
+    img {
+    border-radius: 12px;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="congrats">Agile Promoter iOS</div>
+    <div class="step">
+      <a href="itms-services://?action=download-manifest&url=https://ios.agilepromoter.com/<%= client_id %>/manifest.plist">
+        <table><tr>
+          <td class="instructions">Agile Promoter <%= app_version %></td>
+          <td width="24" class="arrow">&rarr;</td>
+          <td width="57" class="imagelink">
+            <img src="https://ios.agilepromoter.com/agile_icon.png" height="57" width="57" />
+          </td>
+        </tr></table>
+      </a>
+    </div>
+  </body>
+</html>

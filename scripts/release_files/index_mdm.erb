@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Agile Promoter iOS</title>
+    <style type="text/css">
+        body {
+            background: #EAEAE9;
+            font-family: Helvetica-Neue, Helvetica, arial, sans-serif;
+            font-weight: lighter;
+        }
+
+        .congrats {
+            font-size: 16pt;
+            padding: 6px;
+            text-align: center;
+        }
+
+        .step {
+            background: white;
+            border: 1px #ccc solid;
+            border-radius: 14px;
+            padding: 4px 10px;
+            margin: 10px 0;
+        }
+
+        .instructions {
+            font-size: 10pt;
+        }
+
+        .mdm_instructions {
+            font-size: 10pt;
+            color: #777;
+            text-align: center;
+        }
+
+        .mdm_link {
+            font-size: 10pt;
+            color: #777;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        .arrow {
+            font-size: 15pt;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0C0C0C;
+        }
+
+        img {
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="congrats">Agile Promoter iOS</div>
+    <div class="step">
+        <table>
+            <tr>
+                <td class="instructions">Agile Promoter <%= app_version %></td>
+                <td width="57" class="imagelink">
+                    <img src="https://ios.agilepromoter.com/agile_icon.png" height="57" width="57" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table>
+        <tr class="mdm_instructions">
+            <td>
+                <h7>Este cliente utiliza MDM. Para fazer download do arquivo IPA clique </h7><a class="mdm_link" href="https://ios.agilepromoter.com/<%= client_id %>/AgilePromoter.ipa">aqui</a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
