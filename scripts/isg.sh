@@ -20,13 +20,12 @@ function start_install() {
     sudo rm -rf /usr/local/lib/python2.7/dist-packages/OpenSSL/
     apt-get -qq --assume-yes install --reinstall python-openssl
     echo -e "${WHITE}Installing iSign"
-    git clone https://github.com/involvestecnologia/iSign.git
-    sudo ./iSign/isign/INSTALL.sh
     pip install agithub
     pip install requests
     pip install gspread
     pip install boto3
     pip install --upgrade oauth2client
+    ./isign/INSTALL.sh
 }
 
 # Remove setuptools, zip, curl and openSSL

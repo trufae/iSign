@@ -59,7 +59,8 @@ def getRepositories():
 	repos = g.repos['involvestecnologia']['agilepromoter-ios'].releases.get()
 	for r in repos[1]:
 		tag = r['tag_name']
-		if tag == VERSION:
+		if tag.decode('utf-8') == VERSION.decode('utf-8'):
+			print("okkkkk")
 			assetid = repos[1][0]['assets'][0]['id']
 			url = "https://api.github.com/repos/involvestecnologia/agilepromoter-ios/releases/assets/***?access_token=c5f34972b9eae809060d3bc22dffbd006357a3b1"		
 			url = url.replace('***', str(assetid))
@@ -175,7 +176,7 @@ def main(argv):
 		quit()
 	if IOS_GITHUB_TOKEN != None:
 		getRepositories()
-		modifyIPA()
+		#modifyIPA()
 		generateMetadata()
 	if SHEET != None:
 		sheetsHappen()
