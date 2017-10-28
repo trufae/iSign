@@ -121,6 +121,7 @@ def generateMetadata():
 	print('Generate Metadata')
 	with open(os.path.join(os.getcwd()+'/release_files', "index.erb"), 'rb') as file:
 		data = file.read().replace('<%= app_version %>', VERSION)
+		data = data.replace('<%= client_id %>', CLIENT)
 		file.close()
 		f = open("index.html", "wb")
 		f.write(data)
@@ -150,9 +151,11 @@ def vaiFilhao():
 	json = os.path.join(os.getcwd()+'/'+'version.json')
 	client = boto3.client('s3', aws_access_key_id=S3,aws_secret_access_key=S3SECRET, region_name=S3REGION)
 	transfer = S3Transfer(client)
-	transfer.upload_file(path, S3BUCKET, CLIENT+"/"+FILE_NAME)	
+	transfer.upload_file(path, S3BUCKET, CLIENT+"/"+FILE_NAME)
+	transfer.upload_file(index, S3BUCKET, CLIENT+"/"+"index.html", extra_args={'ContentType': "text/html"})
+	transfer.upload_file(manifest, S3BUCKET, CLIENT+"/"+"manifest.plist")
+	transfer.upload_file(json, S3BUCKET, CLIENT+"/"+"version.json")	
 	clean([path, index, manifest, json])
-
 
 # Update Maestro
 def updateMaestro():
@@ -176,7 +179,7 @@ def main(argv):
 		quit()
 	if IOS_GITHUB_TOKEN != None:
 		getRepositories()
-		#modifyIPA()
+		modifyIPA()
 		generateMetadata()
 	if SHEET != None:
 		sheetsHappen()
@@ -184,6 +187,8 @@ def main(argv):
 		updateMaestro()
 	if S3 != None:
 		vaiFilhao()
+	base = os.path.join(os.getcwd()+'/'+'AgileBase.ipa')
+	clean([base])
 
 if __name__ == "__main__":
    parser = argparse.ArgumentParser()
