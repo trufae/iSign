@@ -42,7 +42,7 @@ setup(
         'biplist==0.9',
         'construct==2.5.2',
         'memoizer==0.0.1',
-        'pyOpenSSL==16.2.0'
+        'pyOpenSSL==0.15.1'
     ],
     package_data={
         package: ['apple_credentials/applecerts.pem',
