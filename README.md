@@ -1,4 +1,4 @@
-# iSing
+# iSign
 
 Fork from [Saucelabs](https://github.com/saucelabs/isign/)
 
